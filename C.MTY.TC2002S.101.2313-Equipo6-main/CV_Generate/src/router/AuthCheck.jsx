@@ -1,0 +1,30 @@
+import { useEffect, useState } from 'react';
+import { app } from '../config/firebaseConfig';
+import { useNavigate } from 'react-router-dom';
+
+// eslint-disable-next-line react/prop-types
+const AuthCheck = ({ children }) => {
+  const [authenticated, setAuthenticated] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Comprueba si el usuario está autenticado
+    const unsubscribe = app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // Usuario autenticado
+        setAuthenticated(true);
+      } else {
+        // Usuario no autenticado
+        setAuthenticated(false);
+        navigate('/'); // Redirige al inicio de sesión si no está autenticado
+      }
+    });
+
+    // Limpia el listener cuando el componente se desmonta
+    return () => unsubscribe();
+  }, [navigate]);
+
+  return authenticated ? <>{children}</> : null;
+};
+
+export default AuthCheck;

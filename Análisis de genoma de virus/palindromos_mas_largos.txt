@@ -1,0 +1,12 @@
+Gen M: 
+Palíndromo: CTAAAGAAATC
+Longitud: 11
+
+Gen S: 
+Palíndromo: ATTTTGGTGGTTTTA
+Longitud: 15
+
+Gen ORF1AB: 
+Palíndromo: CTCAATGACTTCAGTAACTC
+Longitud: 20
+

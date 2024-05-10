@@ -1,0 +1,15 @@
+/* Increase the Navbar's height */
+.navbar {
+    padding: 200px 0; 
+  }
+  
+  /* Increase the Navbar Brand font size */
+  .navbar-brand {
+    font-size: 240px; 
+  }
+  
+  /* Increase the Nav Link font size */
+  .nav-link {
+    font-size: 18px; 
+  }
+  
